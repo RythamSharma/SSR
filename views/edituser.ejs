@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    edit user
+    <form action="/user/api/updateuser/<%=user._id%>?_method=patch" method="post">
+        <label for="name">name</label> 
+        <input type="text" name="name" value="<%=user.name%>" id="name" > 
+        <label for="age">age</label>
+        <input type="number" name="age" value="<%=user.age%>" id="age" > 
+        <label for="place">place</label>
+        <input type="text" name="place" value="<%=user.place%>" id="place" >
+        <button type="submit" > Submit </button>
+    </form>
+    
+</body>
+</html>

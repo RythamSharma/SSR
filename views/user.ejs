@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box {
+        height: 250px;
+        width: 250px;
+        color: black;
+        border: 2px solid green;
+        margin: 15px;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Users from database</h1>
+    <a href="/user/createuser"> new user</a>
+    <div class="container">
+      <% for(let user of users){ %>
+      <div class="box">
+        <h1><%= user.name %></h1>
+        <h1><%= user.age%></h1>
+        <h1><%= user.place%></h1>
+        <a href="/user/edituser/<%=user._id%>">edit</a>
+        <form action="/user/api/delete/<%=user._id%>?_method=delete" method="post">
+            <button>delete</button>
+        </form>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
